@@ -1,0 +1,17 @@
+// TOPページ
+
+@use '/app/_styles/variables.scss' as v;
+
+
+.topMenu{
+    padding-bottom: 250px;
+
+    position: relative;
+    z-index: 3;
+
+    @include v.mq(xl){
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+}

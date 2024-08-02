@@ -1,0 +1,70 @@
+/* ブレイクポイント
+================================================================================================= */
+$breakpoints: (
+	'xxl': 'screen and (max-width: 1538px)',
+	'xl': 'screen and (max-width: 1280px)',
+	'lg': 'screen and (max-width: 1024px)', 
+	'md': 'screen and (max-width: 768px)',
+	'sm': 'screen and (max-width: 640px)',
+	'xs': 'screen and (max-width: 425px)',
+) !default;
+
+// ブレイクポイントのmixin
+@mixin mq($bp) {
+	@media #{map-get($breakpoints, $bp)} {
+		@content;
+	}
+}
+
+
+/* color
+========================================================================== */
+$blue : #6799cc;
+$blue2 : #649AEF;
+
+/* font
+========================================================================== */
+//$font-mincho : 'Noto Serif JP', sans-serif;
+
+
+// $font-gothic-thin : 'LINESeedJP_OTF_Th','Noto Sans JP', 'メイリオ','Meiryo',sans-serif;
+$font-gothic : 'Noto Sans JP', 'メイリオ','Meiryo',sans-serif;
+$font-gothic-thin : 'Noto Sans JP', 'メイリオ','Meiryo',sans-serif;
+$font-gothic-text : 'LINESeedJP_OTF_Bd','Noto Sans JP', 'メイリオ','Meiryo',sans-serif;
+
+$img_path : '/img/';
+
+@mixin commonInner {
+
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+    @include mq(xl){
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    @include mq(sm){
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+
+
+@mixin circlommon($opacity:.3,$color:#fff){
+    background-position: center;
+    background-size: cover;
+    
+    &:before{
+        content: "";
+        background-color: rgba($color, 1 );
+        width: 100%;
+        opacity: $opacity;
+        height: 100%;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+}
